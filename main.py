@@ -81,6 +81,54 @@ def main():
     print(2 in my_set)  # => True
     print(10 in my_set)  # => False
 
+    idade = 18  # can be any input
+    if idade > 18:
+        print("você é adulto")
+    elif idade < 18:
+        print("você é criança")
+    else:
+        print("você tem 18 anos!")
+
+    animals = ["dog", "cat", "mouse", "chicken"]
+    for animal in animals:
+        if animal == "mouse":
+            break  # don't print if animal == mouse and stop the loop
+        print(animal)
+
+    for animal in animals:
+        if animal == "chicken":
+            continue  # don't print if animal == chicken but continue the loop
+        print(f"{animal} is a mammal")
+
+    for i in range(4):  # returns an iterable from 0 to 4 (not counting 4)
+        print(f"until4: {i}")
+
+    for n in range(4, 8):  # returns iterable from 4 to 8 (not counting 8)
+        print(f"4-8: {n}")
+
+    for n in range(4, 8, 2):  # range(lower, upper, step)", de 2 em 2
+        print(f"step2: {n}")
+
+    for index, value in enumerate(animals):  # (for i=0; i < list.length; i++){} => returns an index too
+        print(f"index={index} & {value}")
+
+    adj = ["red", "big", "tasty"]
+    fruits = ["apple", "banana", "cherry"]
+    for x in adj:  # => print red apple, red banana, red cherry, big apple, big banana...
+        for y in fruits:
+            print(x, y)
+    else:  # código que vai ser executado após a conclusão do loop
+        print("Finished for-loop!")
+
+    x = 0
+    while x < 6:
+        x += 1
+        if x == 3:  # will ignore 3 and not print it
+            continue
+        print(x)
+    else:
+        print("i não é menor que 6")
+
 
 if __name__ == '__main__':
     main()
