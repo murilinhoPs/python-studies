@@ -32,7 +32,7 @@ def main():
     del lista1[2]  # remove the element that is at index 2 => [3,2,4]
     lista1.remove(2)  # remove the element by its value, will remove the value 2 => [3,4]
     print(lista1)
-    #  lista1.remove(5) -> throws an error, bc the element doesn`t exist
+    #  lista1.remove(5) -> throws an error, bc the element doesn't exist
     lista1.insert(0, 1)  # add value 1 at index 0
     print(lista1)
     print(lista1.index(4))  # returns the index of the element (value)
@@ -42,6 +42,44 @@ def main():
     print(lista1 + other_list)  # soma as duas listas e retorna uma nova
     lista1.extend(other_list)  # modifica a lista que chamou o método
     print(lista1)  # [1, 3, 4, 4, 5, 6]
+
+    tupla = (1, 2, 3, "murilo")  # like list, but immutable. they have the same methods
+    print(tupla[1])
+    print(type((1)))  # => int
+    print(type((1,)))  # => tuple
+    print(len(tupla))  # => 3
+    print(tupla + (4, 5, 6))  # => (1, 2, 3, 4, 5, 6)
+    print(tupla[:2])  # => (1, 2)
+    print(2 in tupla)  # => True
+
+    a, b, c = (1, 2, 3)  # unpack tuples, works with a list
+    a, *b, c = (1, 2, 3, 4)  # unpack, but b will have two values a=1, b=[2,3] and c=4
+    print(a, b, c)
+
+    empty_dict = {}  # can create by any immutable type, like ints, floats, strings, tuples.
+    my_dict = {"name": "Murilo", "age": 25, "hobbies": ["game", "guitar", "rpg"]}
+    print(my_dict["name"])
+    print(my_dict["hobbies"])  # will throw an error if key doesn't exist
+    print(my_dict.get("ddd"))  # if key dont exist, returns None (null)
+    my_dict["teste"] = "empty"  # or my_dict.update({"teste": "empty"})
+    my_dict.setdefault("five", 5)  # only adds if the value doesn't exist yet on dictionary
+    print(my_dict)
+    del my_dict["teste"]
+    print(my_dict)
+    print(list(my_dict.keys()))  # returns all the keys
+    print(list(my_dict.values()))  # returns all the values
+
+    empty_set = set()
+    my_set = {1, 1, 2, 3, 4, 4}  # list without duplicates
+    valid_set = {(1,), 1}  # can't use [1]  bc is not immutable => {[1], 1}
+    print(my_set)
+    my_set.add(5)  # only adds if element doesn't exist
+    print(my_set)  # {1, 1, 2, 3, 4, 4, 5}
+    other_set = {3, 4, 5, 8}
+    print(my_set & other_set)  # => intersection between values {3,4,5}
+    print(my_set | other_set)  # junta os sets, sem repetir os valores => {1, 2, 3, 4, 5, 8}
+    print(2 in my_set)  # => True
+    print(10 in my_set)  # => False
 
 
 if __name__ == '__main__':
