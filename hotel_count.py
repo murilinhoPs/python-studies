@@ -17,7 +17,7 @@ def different_booked_rooms(rooms):
         return len(hash_map)
 
 
-print(different_booked_rooms(listaA))
+print(different_booked_rooms(listaB))
 
 
 def booked_rooms_at_end(rooms: List[str]):
@@ -25,7 +25,7 @@ def booked_rooms_at_end(rooms: List[str]):
     hash_map = {}
     for n in rooms:
         floor_room = n[1] + n[2]
-       
+
         if hash_map.get(floor_room) is not None:
             if "+" in n:
                 hash_map[floor_room] = "+"
@@ -52,14 +52,15 @@ def booked_rooms_at_end_count(rooms: List[str]):
             count -= 1
     else:
         return count
-    
+
+
 def booked_rooms_at_end_names(rooms: List[str]):
     hash_map = {}
     for n in rooms:
         floor_room = n[1] + n[2]
         if hash_map.get(floor_room) is not None:
             if "-" in n:
-               del hash_map[floor_room]
+                del hash_map[floor_room]
         else:
             hash_map[floor_room] = n[0]
     else:
