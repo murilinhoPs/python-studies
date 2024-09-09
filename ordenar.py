@@ -20,7 +20,10 @@ print(most_played_artists)
 # procurar o maior entre eles (passando por todos os elementos)
 # adicionar o maior em primeiro numa outra lista
 # retornar essa nova lista
+# na lógica se trocar o sinal para "<" lista[i] < atual, vai retornar oo menor valor
 
+
+# if change for lista[i] < atual, it will return the lowest value
 def find_higher_value(lista):
     atual = lista[0]
     index_atual = 0
