@@ -25,17 +25,32 @@ print(most_played_artists)
 
 # if change for lista[i] < atual, it will return the lowest value
 def find_higher_value(lista):
-    atual = lista[0]
-    index_atual = 0
+    index = 0
     for i in range(1, len(lista)):
-        if lista[i] > atual:
-            atual = lista[i]
-            index_atual = i
-    return index_atual
+        if lista[i] > lista[index]:
+            index = i
+    return index
+
+
+# retorna o index_atual quando terminar de passar pela lista toda (len(lista))
+
+# caso base. quando chegar no final da lista retorna o index_maior. return;
+# SE não, chamo a função novamente passandoo index_maior e o index_atual + 1 (0 +1; 1+1....)
+# MAS se o valor do index_atual (lsta[index_atual]) for maior (>)  que o index_maior (lista[index_maior]), 
+# atualizo o valor do index_maior = index_atual (pq quer dizer que o valor do index_atual é maior que o index_maior)
+# depois de atualizar o valor, continuo chamando a própria função
+
+def find_higher_value_recursive(lista, index_atual=0, index_maior=0):
+    if index_atual == len(lista):
+        return index_maior
+    if lista[index_atual] > lista[index_maior]:
+        index_maior = index_atual
+    return find_higher_value_recursive(lista, index_atual + 1, index_maior)
 
 
 # plays_count.reverse()
-print(find_higher_value(plays_count))
+print(find_higher_value(plays_count))  # => 0
+print(find_higher_value_recursive(plays_count))  # => 0
 
 
 def sorting_value(lista):
