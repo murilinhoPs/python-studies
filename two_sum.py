@@ -1,13 +1,13 @@
 from typing import List
 
 
-def two_sum(nums: List[int], target: int) -> List[int]:
+def two_sum(nums: List, target: int):
     hash_map = {}
-
     for index, value in enumerate(nums):
-        if hash_map.get(value) is not None:
-            return [hash_map.get(value), index]
-        hash_map[target-value] = index
+        if hash_map.get(value):
+            return {"indexes": [hash_map.get(value), index],
+                    "numbers": [nums[hash_map.get(value)], nums[index]]}
+        hash_map[target - value] = index
 
 
-print(two_sum([3, 2, 4], 6))
+print(two_sum([11, 15, 7, 2], 9))
