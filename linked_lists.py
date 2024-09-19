@@ -75,19 +75,19 @@ class LinkedList:
             return
 
         new_node = Node(new_data)
-        if current_node.data == data:
+        if current_node.data == node_data:
             new_node.next = current_node.next
-            current_node.next = new_value
+            current_node.next = node_data
             return
 
-        while current_node and current_node.data != data:
+        while current_node and current_node.data != node_data:
             current_node = current_node.next
 
         if current_node is None:
             print("esse elemento não existe")
             raise Exception("Element is None")
 
-        current_node.data = new_value
+        current_node.data = node_data
 
     def update_index(self, new_value: str, target_index=0):
         if target_index == 0:
