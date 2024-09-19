@@ -13,11 +13,6 @@ class LinkedList:
     def __init__(self, head_node: Node = None):
         self.head = head_node
 
-    def is_empty(self):
-        if self.head is None:
-            print("lista vazia")
-            return
-
     def size(self):
         size = 0
         if self.head is None:
@@ -146,8 +141,8 @@ class LinkedList:
             current_node = current_node.next
 
         # vai remover o proximo dele, que é realmente oo último elemento
-        current_node.next = None 
-        
+        current_node.next = None
+
     def remove_at_index(self, target_index=0):
         if self.head is None:
             print("sem elementos para remover")
