@@ -212,7 +212,7 @@ print(f"size: {new_ll.size()}")
 print("")
 
 new_ll.print_ll()
-new_ll.update_index("jorge jr", 3)  # atualizar o 2 elemento
+new_ll.update_index("jorge jr", 3)  # atualizar o ultimo elemento
 new_ll.update_node("murilinho", "murilinhops")
 print("")
 
