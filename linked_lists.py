@@ -1,6 +1,8 @@
 from typing import *
 
 
+#  https://www.geeksforgeeks.org/python-linked-list/
+
 class Node:
     def __init__(self, data: str):
         self.data = data
