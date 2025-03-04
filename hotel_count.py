@@ -12,12 +12,12 @@ def different_booked_rooms(rooms):
         if hash_map.get(floor_room) is not None:
             continue
         else:
-            hash_map[floor_room] = n[0]
+            hash_map[floor_room] = True
     else:
         return len(hash_map)
 
 
-print(different_booked_rooms(listaB))
+print(different_booked_rooms(listaA))
 
 
 def booked_rooms_at_end(rooms: List[str]):
@@ -70,3 +70,4 @@ def booked_rooms_at_end_names(rooms: List[str]):
 print(booked_rooms_at_end(listaA))
 print(booked_rooms_at_end_count(listaA))
 print(booked_rooms_at_end_names(listaA))
+ 
