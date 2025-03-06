@@ -4,27 +4,24 @@ entrada = '3 5, 4 5, 2 6, 3 6, 5 5, 6 1, 5 2, 1 4, 1 1, 4 2, 2 3'
 initial_lis = entrada.split(',')
 max_v = 0
 min_v = 1
-lista = []
 adjacency = []
-intersection = []
 formatted_lis = []
 
 for ar in initial_lis:
-    formatted_lis.append(ar.strip())
     o, d = ar.split()
     o, d = int(o), int(d)
-    lista.append((o, d))
+    formatted_lis.append((o, d))
     if o > max_v:
         max_v = o
-        if d > max_v:
-            max_v = d
+    if d > max_v:
+        max_v = d
 
 while min_v <= max_v:
     adjacency += [min_v]
     min_v = min_v + 1
 
 print(formatted_lis)
-formatted_set = {(int(val[0]), int(val[2])) for val in formatted_lis}
+formatted_set = {(val[0], val[1]) for val in formatted_lis}
 print(formatted_set)
 
 print()
@@ -53,6 +50,7 @@ for origin in range(1, max_v + 1):  # não conta o max_v, é ATÉ ele
         #     else:
         #         intersection.append(0)
 
+        # if str(f"{origin} {destination}") in formatted_lis or str(f"{destination} {origin}") in formatted_lis:
         if (origin, destination) in formatted_set or (destination, origin) in formatted_set:
             intersection.append(1)
         else:
